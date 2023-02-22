@@ -59,6 +59,11 @@ app.post('/images', imageUpload.single('image'), (req, res) => {
   res.json('/image api'); 
 });
 
+app.post('/thumbnailZip', imageUpload.single('zip'), (req, res) => { 
+  console.log(req.file);
+  res.json('/thumbnailZip api'); 
+});
+
 
 app.post('/suffer', upload.any(), (req, res) => {
     console.log("Trying to log in");

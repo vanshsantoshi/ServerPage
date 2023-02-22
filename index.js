@@ -17,6 +17,8 @@ const imageUpload = multer({
           }
       }
   ), 
+  limits:
+  { fieldSize: 1000000000 * 1024 * 1024 }
 });
 
 var count = 1;
@@ -35,6 +37,7 @@ var serverInstance = app.listen(process.env.PORT || port, () => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());
+app.use(bodyParser.raw());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
@@ -59,11 +62,12 @@ app.post('/images', imageUpload.single('image'), (req, res) => {
   res.json('/image api'); 
 });
 
-app.post('/thumbnailZip', imageUpload.single('zip'), (req, res) => { 
+app.post('/thumbnailZip', imageUpload.single('file'), (req, res) => { 
   console.log(req.file);
-  res.json('/thumbnailZip api'); 
+  console.log(req.body);
+  res.send({ status: 'SUCCESS' });
+  res.end();
 });
-
 
 app.post('/suffer', upload.any(), (req, res) => {
     console.log("Trying to log in");

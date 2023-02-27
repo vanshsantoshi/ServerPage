@@ -16,13 +16,16 @@
    .login-form input[type="submit"] {
       font-family: ubuntu mono;
       background-color: black;
-      cursor: pointer;
       color: white;
-      margin: 0;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+
+      font-family: ubuntu mono;
+      padding: 5px 7px; 
+      font-size: medium;
+      
+      display: flex;
+      margin:0 auto;
+      align-items:center;
+      
    }
    .login-form input[type="password"],
    .login-form input[type="text"] {
@@ -90,7 +93,7 @@
 </center>
 <div class="login-form">
 			<form action="suffer" method="POST">
-				<input id="pass"  type="password" name="password" required>
+				<input id="pass"  type="password" name="password" required> <br \>
 				<input id="sub"  type="submit">
 			</form>
 </div>

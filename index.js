@@ -75,12 +75,13 @@ app.post('/images', imageUpload.single('image'), (req, res) => {
 	console.log(req.file);
 	res.status(200);
 	res.json('/image api'); 
+	res.end();
 });
 
 app.post('/thumbnailZip', imageUpload.single('file'), (req, res) => { 
 	console.log(req.file);
 	console.log(req.body);
-	res.send({ status: 'SUCCESS' });
+	res.send(200);
 	res.end();
 });
 
@@ -114,10 +115,6 @@ app.post('/suffer', upload.any(), (req, res) => {
 app.post('/savePaths', upload.any(), (req, res) => {
 	console.log("Saving paths");
 	var pathsToSave = req.body.dataToSave;
-	//shouldPush = true;
-	//whatToPush = whatToPush + "|" + pathsToPush;
-	//console.log(whatToPush);
-	//var filePath = path.join(__dirname, 'pendingImages.txt');
 
 	fs.readFile('pendingImages.txt', {encoding: 'utf-8', flags: 'r'}, function(err,data){
 		if (!err) {
@@ -178,7 +175,7 @@ app.get('/shouldUpload', (req, res) => {
 			res.end();
 		}
 		if (meow == "empty"){
-			res.json("{ data: nothing }");
+			res.send("NoFiles");
 			res.end();
 		} else {
 			fs.writeFile( 'pendingImages.txt', "empty", {encoding: 'utf-8', flags: 'w'}, function(err){
@@ -188,7 +185,7 @@ app.get('/shouldUpload', (req, res) => {
 					return;
 				}
 			});
-			res.json("{ data: " + meow + " }");
+			res.send(meow);
 			res.end();
 		}
 	});

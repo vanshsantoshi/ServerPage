@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Media to download
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    background-color:#000000;
+    background-repeat:no-repeat;
+    background-position:top left;
+    background-attachment:fixed;
+}
+h1{
+    text-align:left;
+    font-family: ubuntu monospace;
+    color:#ffffff;
+    font-size: xx-large;
+    background-color:#000000;
+}
+p {
+    font-family: ubuntu monospace;
+    font-size:medium;
+    font-style:normal;
+    font-weight:normal;
+    color:#ffffff;
+    background-color:#000000;
+}
+.text-form input[type="text"] {
+      font-family: ubuntu mono;
+      width: 100%;   
+      padding: 12px 20px;   
+      margin: 8px 0;   
+      font-size: medium;
+      display: inline-block;   
+      border: 1px solid #ccc;   
+      box-sizing: border-box;
+      background-color: black;
+      color: white;
+}
+.text-form button[type="submit"] {
+      font-family: ubuntu mono;
+      padding: 5px 7px; 
+      font-size: medium;
+      background-color: black;
+      color: white;
+    
+}
+</style>
+</head>
+<body>
+<h1>Media Downloader</h1>
+<p>Enter the path of the image you want,  and click "submit".</p>
+<p>Media will be downloaded and saved to /files within 1-2 min.</p>
+<div class="text-form">
+    <form action="savePaths" method="POST">
+        <input id="dataToSave" name = "dataToSave" type="text" required/> <br /> <br />
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

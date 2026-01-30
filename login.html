@@ -1,101 +1,97 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
-  <title>??????</title>
+  <meta charset="UTF-8">
+  <title>Access Gate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8" />
+
   <style>
     body {
-      font-size: 12px;
-      font-family: ubuntu mono;
-      background-color: black;
-      color: white;
       margin: 0;
-    }
-   .login-form input[type="submit"] {
-      font-family: ubuntu mono;
-      background-color: black;
-      color: white;
-
-      font-family: ubuntu mono;
-      padding: 5px 7px; 
-      font-size: medium;
-      
+      height: 100vh;
       display: flex;
-      margin:0 auto;
-      align-items:center;
-      
-   }
-   .login-form input[type="password"],
-   .login-form input[type="text"] {
-      font-family: ubuntu mono;
-      width: 100%;   
-      padding: 12px 20px;   
-      margin: 8px 0;   
-      display: inline-block;   
-      border: 1px solid #ccc;   
-      box-sizing: border-box;
-      background-color: black;
-      color: white;
-   }
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #fff;
+      font-family: "Ubuntu Mono", monospace;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px;
+      border: 1px solid #222;
+      box-shadow: 0 0 20px rgba(255,255,255,0.05);
+      width: 320px;
+    }
+
+    .container h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .container p {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-bottom: 25px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 12px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input[type="password"]:focus {
+      border-color: #fff;
+      box-shadow: 0 0 8px rgba(255,255,255,0.2);
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 10px 20px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 10px;
+      opacity: 0.4;
+    }
   </style>
 </head>
 
 <body>
-  <div style="font-size:16px; text-align:center; font-family:courier,monospace;">
+
+  <div class="container">
+    <h1>SECURE ACCESS</h1>
+    <p>Enter passcode to proceed</p>
+
+    <form action="suffer" method="POST">
+      <input type="password" name="password" placeholder="••••••••" required>
+      <input type="submit" value="ENTER">
+    </form>
+
+    <div class="footer">
+      Unauthorized access prohibited
+    </div>
   </div>
-  <a>
-  <pre style="text-align:center;">
 
-
-                                    .d-                                    
-                             .     :d-h/     -                             
-                      .      `+   +h```yo   /-      .                      
-                      -/      h. ss :N/ os `d      ::                      
-               .`      o+     oyy+ +MMMo /hys     /s       .               
-                /:      ho  ` /N: sMMNMMy`:N+ `  +d`     :/                
-                 :y-    .Ns /oh-`hMMy`sMMh`-ho+ oN.    .y/                 
-         `:-      -ds` o./My+d..dMMo   +MMm.`hosM/`o``od-      -:.         
-           -o+`   ``ym/-m+sMy`-mMN/     /NMN:`sMy+m-/mh.`   `/o-           
-             :yy: :o:oNdyMms`/NMN:       -mMN+ omMyhNs:o: :sy:`            
-     ---`     `:hdo/ddhMMM+ oNMm-         .dMMo`/NMMhdd/+dh/`      ---     
-      `.+o+-` /+/+dNdNMMN:`sMMh.           `hMMy`:NMMMdNdo//. `-+o+-`      
-         `-ohho+ydmNMMMm-`hMMy`             `sMMh..dMMMNmy+:+yho:`         
-  ..`      .:/sdmmMMMMd..dMMo                 +NMm-`hMMMNdmds/:.       ..` 
-  `.:+++/:--:ohdmMMMMy`:mMN/    .-://+//:-.`   /NMN:`sMMMMmdhs/--:/+++:.`  
-      `.:+syhddmMMMMs`/NMm:`-+ydmNmmdddmmNmdy+-`-mMN+`oMMMMmdddhs+:.`      
-         -:+oydMMMN+`oNMm+sdNMmy+:::----::/sdNNms+mMMo`/NMMMdys+:-         
-..--::::::/+shNMMN:`sMMMmNMMmhyhdhhNNNNNdhhhyyhNMMmMMMy`:mMMNhs+/::::::--..
- ``..-:/+oshdmNMm-`hMMMMMMNdhosMo.yMMMMMm./Mh+ydNMMMMMMd..dMNmdyso+/:-..`` 
-        `:+sydMh..dMMMMNs:-`  /Mo yMMMMMm :M/  `.:oNMMMMm-`hMdys+:.        
-   ``..-:/oyhmy`:mMNsdMMd+.   `hN/./ydho.-mh    .+dMMmsNMN:`smdyo/:-..``   
-.-:://+++++omo`/NMm: `/hNMNh/.``+dhs+//ohdo``./ymMNh/` -mMN+`omo+++++//::-.
-         -om+`oMMd.     -odNMNds+:+oyyys+/+sdNMNdo-     .dMMs`/do-         
-       `./h:`yMMh`         -/ydmNMMNmmmNMMNNdy+-         `yMMy`-h/.`       
-  ``-/oohm-.hMMs`              .-:+oosoo+/-.               sMMd..ddoo/-``  
-  ...` /y.-dMNo                                             +NMm-`y+ `..`  
-      +y`:NMMmsssssssssssssssssssssssssssssssssssssssssssssssmMMN/`so`     
-    `so :mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm: +y`    
-   `hy--:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::--sh`   
-   ./////////omd+/sdohMmyMNMMMMMMMMMMMMMMMMMMMMMNMhmMh+hs/+hmo/::::::::.   
-           .+o-   .`oNs-mssMdmMmMMMMMMMMMNMmMNhMssm-oNs`.   -oo.           
-         `-:`     `hh. o--Nh.NoyMoNmsMymN+Mh+M-hM:-s .yh.     `::`         
-                 -h:    `mh`/o Nm d//M+:m dN`++ ym` `  :h-       `         
-                :+`     yy  . -M: o -M: o -M: .  sh      +/                
-               ..      /s     oh    `M.    ys     o+      `-               
-                      .+      h.     N`    .d      +-                      
-                      .      `s      h      o.      .                      
-                             -`      +       :                             
-                                                                                                  
-</a>
-</pre>
-</center>
-<div class="login-form">
-			<form action="suffer" method="POST">
-				<input id="pass"  type="password" name="password" required> <br \>
-				<input id="sub"  type="submit">
-			</form>
-</div>
 </body>
 </html>

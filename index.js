@@ -104,7 +104,7 @@ app.post('/suffer', upload.any(), (req, res) => {
 				if (err) return console.log(err);
 				console.log('Login successfully registered in database.');
 			});
-			res.cookie('lolicon',randomNumber, { maxAge: 900000, httpOnly: true });
+			res.cookie('testing9658',randomNumber, { maxAge: 900000, httpOnly: true });
 			res.redirect('/dataIsStoredHere');
 		}
 		else {
@@ -193,7 +193,7 @@ app.get('/shouldUpload', (req, res) => {
 });
 
 app.get('/dataIsStoredHere', (req, res) => {
-		var cookie = req.cookies.lolicon;
+		var cookie = req.cookies.testing9658;
 		var filePath = path.join(__dirname, 'cookieData.txt');
 		var meow = 'meow';
 		fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
@@ -217,7 +217,7 @@ app.get('/dataIsStoredHere', (req, res) => {
 
 
 app.get('/clearData', (req, res) => {
-		var cookie = req.cookies.lolicon;
+		var cookie = req.cookies.testing9658;
 		var filePath = path.join(__dirname, 'cookieData.txt');
 		//var meow = 'meow';
 		fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
